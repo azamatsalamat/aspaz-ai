@@ -1,0 +1,85 @@
+:host {
+    --form-bg-color: #F3DD76;
+    --form-text-color: #2C3E50;
+}
+
+form {
+    text-align: center;
+    background-color: var(--form-bg-color);
+    border-radius: 15px;
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1rem;
+    color: var(--form-text-color);
+}
+
+label {
+    font-weight: 700;
+    grid-column: 1 / span 2;
+    justify-self: right;
+    align-self: center;
+}
+
+input, select {
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 1rem;
+    height: 2rem;
+    background-color: var(--form-bg-color);
+    border: 0.5px solid black;
+    border-radius: 5px;
+    color: var(--form-text-color);
+
+    grid-column: 3 / span 2;
+}
+
+input {
+    padding: 0.5rem;
+}
+
+select {
+    padding: 0.1rem;
+}
+
+.units{
+    grid-column: 5 / span 1;
+    justify-self: left;
+}
+
+.form-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button{
+    font-family: 'Quicksand', 'sans-serif';
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    form{
+        border-radius: 0px;
+    }
+
+    .form-container{
+        grid-template-columns: 1fr;
+        padding: 1rem 1.5rem;
+    }
+    
+    label, input, select, .units {
+        grid-column: 1 / span 1;
+    }
+
+    label, units{
+        justify-self: left;
+    }
+
+    input, select {
+        width: 100%;
+        justify-self: center;
+    }
+}
