@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Serving</th>
+            <th>Meal</th>
+            <th>Ingredients</th>
+            <th>Calories</th>
+            <th>Carbs</th>
+            <th>Proteins</th>
+            <th>Fats</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (menuResults && menuResults[0]){
+            @for (result of menuResults[0].data; track result.serving) {
+                <tr>
+                    <td>{{ result.serving }}</td>
+                    <td>{{ result.meal }}</td>
+                    <td>{{ result.ingredients }}</td>
+                    <td>{{ result.calories }}</td>
+                    <td>{{ result.carbs }}</td>
+                    <td>{{ result.proteins }}</td>
+                    <td>{{ result.fats }}</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

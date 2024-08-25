@@ -1,27 +1,32 @@
-<form>
+<form (ngSubmit)="onSubmit()">
     <div class="form-container">
-        <label>Gender: </label>
-        <select id="options">
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
+        <label for="gender">Gender: </label>
+        <select id="gender" name="gender" [(ngModel)]="selectedGender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
         </select>
         <div></div>
 
-        <label>Age: </label>
-        <input type="number" min="0" id="weight" name="weight">
+        <label for="age">Age: </label>
+        <input type="number" min="0" id="age" name="age" [(ngModel)]="enteredAge">
         <div></div>
             
-        <label>Weight: </label>
-        <input type="number" min="0" id="weight" name="weight">
+        <label for="weight">Weight: </label>
+        <input type="number" min="0" id="weight" name="weight" [(ngModel)]="enteredWeight">
         <label class="units">kg </label>
 
-        <label>Goal: </label>
-        <select id="options">
+        <label for="goal">Goal: </label>
+        <select id="goal" name="goal" [(ngModel)]="selectedGoal">
             <option>Lose weight</option>
             <option>Gain muscles</option>
             <option>Keep the current form</option>
         </select>
+        <div></div>
+
+        <label for="preferences">Write down your preferences: </label>
+        <textarea id="preferences" type="text" name="preferences" [(ngModel)]="enteredPreferences"></textarea>
+        <div></div>
     </div>
     <button type="Submit">Create menu</button>
 </form>
