@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MenuService } from './menu.service';
 
 @Component({
@@ -9,8 +9,14 @@ import { MenuService } from './menu.service';
   styleUrl: './menu-table.component.css'
 })
 export class MenuTableComponent {
+  @Output() hideTable = new EventEmitter<void>();
   private menuService = inject(MenuService);
+
   get menuResults(){
     return this.menuService.menuData;
+  }
+
+  onHideTable(){
+    this.hideTable.emit();
   }
 }

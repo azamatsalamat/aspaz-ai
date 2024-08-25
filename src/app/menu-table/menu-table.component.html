@@ -1,5 +1,6 @@
-@for (day of menuResults; track day.day) {
-    <div class="table-container">
+<div class="table-container">
+    <button (click)="onHideTable()">&#8592; Back</button>
+    @for (day of menuResults; track day.day) {
         <h2>{{day.day}}</h2>
         <table>
             <thead>
@@ -27,5 +28,6 @@
                 }
             </tbody>
         </table>
-    </div>
-}
+    }
+    <button (click)="onHideTable()">&#8592; Back</button>
+</div>

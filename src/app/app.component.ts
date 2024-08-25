@@ -12,5 +12,12 @@ import { MenuTableComponent } from "./menu-table/menu-table.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'aspaz-ai';
+  dataSubmitted = false;
+
+  onSubmitData(){
+    this.dataSubmitted = true;
+  }
+  onHideTable(){
+    this.dataSubmitted = false;
+  }
 }

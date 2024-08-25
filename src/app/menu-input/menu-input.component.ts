@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { type MenuInput } from './menu-input.model';
 import { MenuService } from '../menu-table/menu.service';
@@ -16,6 +16,8 @@ export class MenuInputComponent {
   enteredWeight?: number;
   selectedGoal?: string;
   enteredPreferences?: string;
+
+  @Output() submitData = new EventEmitter<void>();
 
   private menuService = inject(MenuService);
 
@@ -41,5 +43,7 @@ export class MenuInputComponent {
     this.enteredWeight = undefined;
     this.selectedGoal = undefined;
     this.enteredPreferences = undefined;
+
+    this.submitData.emit();
   }
 }

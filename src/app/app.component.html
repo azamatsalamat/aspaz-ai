@@ -1,3 +1,7 @@
 <app-header/>
-<app-menu-input/>
-<app-menu-table/>
+@if (!dataSubmitted){
+    <app-menu-input (submitData)="onSubmitData()"/>
+}
+@else {
+    <app-menu-table (hideTable)="onHideTable()"/>
+}
