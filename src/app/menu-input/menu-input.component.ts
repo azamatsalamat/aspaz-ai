@@ -22,10 +22,10 @@ export class MenuInputComponent {
   private menuService = inject(MenuService);
 
   onSubmit(){
-    if (!this.selectedGender || !this.enteredAge || !this.enteredWeight || !this.selectedGoal) {
-      alert('Please fill in all required fields.');
-      return;
-    }
+    // if (!this.selectedGender || !this.enteredAge || !this.enteredWeight || !this.selectedGoal) {
+    //   alert('Please fill in all required fields.');
+    //   return;
+    // }
 
     let data: MenuInput;
     data = {

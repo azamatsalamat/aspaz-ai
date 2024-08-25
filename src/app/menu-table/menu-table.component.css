@@ -1,10 +1,11 @@
-th, td{
-    padding: 1rem;
+:host {
+    --card-bg-color: #F3DD76;
 }
 
-.table-container{
+.table-card{
     max-width: 50rem;
     margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 button{
@@ -18,3 +19,66 @@ button:hover{
     text-decoration: underline;
     cursor:pointer;
 }
+
+.table-container {
+    display: table;
+    width: 100%;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 1rem;
+}
+
+.table-cell span:first-child{
+    display: none;
+}
+
+.table-head{
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    button, h2{
+        margin-left: 2rem;
+    }
+
+    .table-card{
+        max-width: 100%;
+    }
+    .table-container{
+        display: block;
+    }
+
+    .table-row{
+        background-color:var(--card-bg-color);
+        display: block;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-cell:first-child{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .table-cell{
+        display: block;
+        padding: 0 0 0.5rem 0;
+    }
+
+    .table-cell span:first-child{
+        display: inline;
+        font-weight: bold;
+    }
+
+    #table-head{
+        display: none;
+    }
+  }
